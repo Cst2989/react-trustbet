@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import { useWeb3React } from '@web3-react/core';
 function App() {
+  const web3React = useWeb3React()
   return (
     <div className="App">
       <header className="App-header">
