@@ -27,6 +27,9 @@ jobs:
       # https://circleci.com/docs/2.0/google-container-engine/
       # https://cloud.google.com/container-registry/docs/pushing
   push-image:
+    branches:
+      only:
+        - master
     machine: true
     steps:
       - checkout
@@ -42,8 +45,5 @@ workflows:
     jobs:
       - test-locally
       - push-image:
-          branches:
-            only:
-              - master
           requires:
             - test-locally
