@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-trustbet/static/css/main.5f361e03.chunk.css",
+    "main.js": "/react-trustbet/static/js/main.48ebd80c.chunk.js",
+    "main.js.map": "/react-trustbet/static/js/main.48ebd80c.chunk.js.map",
+    "runtime-main.js": "/react-trustbet/static/js/runtime-main.58b43f0e.js",
+    "runtime-main.js.map": "/react-trustbet/static/js/runtime-main.58b43f0e.js.map",
+    "static/js/2.0145451b.chunk.js": "/react-trustbet/static/js/2.0145451b.chunk.js",
+    "static/js/2.0145451b.chunk.js.map": "/react-trustbet/static/js/2.0145451b.chunk.js.map",
+    "index.html": "/react-trustbet/index.html",
+    "precache-manifest.4b2214610a53ac6274a2882570d25172.js": "/react-trustbet/precache-manifest.4b2214610a53ac6274a2882570d25172.js",
+    "service-worker.js": "/react-trustbet/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/react-trustbet/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.0145451b.chunk.js.LICENSE.txt": "/react-trustbet/static/js/2.0145451b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.58b43f0e.js",
+    "static/js/2.0145451b.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.48ebd80c.chunk.js"
+  ]
+}
