@@ -75,7 +75,7 @@ const CreateBet = props => {
                     <p>Write a short description of your bet - give context and details for better success.</p>
                     <Input
                         type="text"
-                        edit
+                        edit="true"
                         placeholder="Description"
                         value={description}
                         onChange={ev => setDescription(ev.target.value)}
@@ -85,9 +85,9 @@ const CreateBet = props => {
                     <h3>Bet Options</h3>
                     <p>Define the outcome for this option. Bettor cand choose out of these.</p>
                     {options.map((option, index) => (
-                        <div>
+                        <div key={index}>
                             <Input
-                                list
+                                list="true"
                                 key={index}
                                 type="text"
                                 placeholder="Option"
@@ -103,27 +103,27 @@ const CreateBet = props => {
                     <p>Define a value for your bet, add a person which you all trust and set an expiry date.</p>
                     <Input
                         type="number"
-                        number
+                        number="true"
                         placeholder="Amount"
                         value={amount}
                         onChange={ev => setAmount(ev.target.value)}
                     />
                     <Input
                         type="number"
-                        user
+                        user="true"
                         placeholder="Trustee"
                         value={trustee}
                         onChange={ev => setTrustee(ev.target.value)}
                     />
                     <Input
                         type="date"
-                        calendar
+                        calendar="true"
                         placeholder="Expiry date"
                         value={expiry}
                         onChange={ev => setExpiry(ev.target.value)}
                     />
                 </Box>
-                <Button blue onClick={createBet}>Save</Button>
+                <Button blue="true" onClick={createBet}>Save</Button>
             </div>
         </main>
     );

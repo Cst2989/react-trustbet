@@ -27,7 +27,7 @@ const Tutorial = props => {
                 </div>
                 <div className={'step ' + ( step === 3 ? 'active' : '')}>
                     <StyledImage src={Step3} alt=""/>
-                    <StyledP h90>You have completed the tutorial. You’re all set now.</StyledP>
+                    <StyledP h90="true">You have completed the tutorial. You’re all set now.</StyledP>
                 </div>
                 <div className="steps">
                     <div className={'step_buble ' + ( step === 1 ? 'active' : '')}></div>
@@ -36,14 +36,14 @@ const Tutorial = props => {
                 </div>
                 <ButtonsContainer>
                     {step === 1  ? (
-                        <Button secondary as={Link} to="/create-bet">Skip</Button>
+                        <Button secondary="true" as={Link} to="/create-bet">Skip</Button>
                     )   : (
-                        <Button secondary onClick={(ev) => setStep(step - 1)}>Previous</Button>
+                        <Button secondary="true" onClick={(ev) => setStep(step - 1)}>Previous</Button>
                     )}
                     {step === 3  ? (
-                        <Button no_icon as={Link} to="/create-bet">Bet</Button>
+                        <Button no_icon="true" as={Link} to="/create-bet">Bet</Button>
                     ) : (
-                        <Button no_icon onClick={(ev) => setStep(step+1)}>Next</Button>
+                        <Button no_icon="true" onClick={(ev) => setStep(step+1)}>Next</Button>
                     )}
                 </ButtonsContainer>
             </div>
