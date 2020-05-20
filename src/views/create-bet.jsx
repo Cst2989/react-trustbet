@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Web3 from "web3";
+import Box from '../components/box/box';
+import Input from '../components/input/input';
+import StyledLink from '../components/link/link';
+import Button from '../components/button/button';
 const { abi } = require("../contracts/TrustBet.json");
+
 const CreateBet = props => {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [options, setOptions] = useState([]);
-    const [trustee, setTrustee] = useState(
-        "0x9e785c918E1a4017DDc5cf580fc1fbD36E3BB9eB"
-    );
-    const [amount, setAmount] = useState(10);
-    const handleNrOfOptions = nr => {
-        const array = Array.from({ length: nr });
-        setOptions(array);
-    };
+    const [options, setOptions] = useState(['']);
+    const [trustee, setTrustee] = useState("");
+    const [expiry, setExpiry] = useState("");
+    const [amount, setAmount] = useState(0);
+
+    const addOption = () => {
+        setOptions([...options, ''])
+    }
     const handleOptionChange = (value, idx) => {
         const newOptions = options.map((option, index) => {
         if (index === idx) {
@@ -55,51 +59,71 @@ const CreateBet = props => {
         `/bet/${createBetTx.events.CreatedBet.returnValues.betId}/`
         );
     };
+    useEffect(() => {
+            if(!window.ethereum) {
+                props.history.push(
+                    `/login`
+                );
+            }
+    }, []);
     return (
         <main className="App-body">
             <div className="createBet">
-                <input
-                    type="text"
-                    placeholder="Name"
-                    value={name}
-                    onChange={ev => setName(ev.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Description"
-                    value={description}
-                    onChange={ev => setDescription(ev.target.value)}
-                />
-                <input
-                    type="number"
-                    placeholder="Number of Options"
-                    onChange={ev => handleNrOfOptions(ev.target.value)}
-                />
-                {options.map((option, index) => (
-                <div>
-                    <input
-                        key={index}
+                <h1 className="betHeader">Bet name</h1>
+                <Box>
+                    <h3>Bet Definition</h3>
+                    <p>Write a short description of your bet - give context and details for better success.</p>
+                    <Input
                         type="text"
-                        placeholder="Option"
-                        value={option}
-                        onChange={ev => handleOptionChange(ev.target.value, index)}
+                        edit
+                        placeholder="Description"
+                        value={description}
+                        onChange={ev => setDescription(ev.target.value)}
                     />
-                </div>
-                ))}
-                <input
-                    type="number"
-                    placeholder="Amount"
-                    value={amount}
-                    onChange={ev => setAmount(ev.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Trustee"
-                    value={trustee}
-                    onChange={ev => setTrustee(ev.target.value)}
-                />
-
-                <button onClick={createBet}>Create Bet</button>
+                </Box>
+                <Box>
+                    <h3>Bet Options</h3>
+                    <p>Define the outcome for this option. Bettor cand choose out of these.</p>
+                    {options.map((option, index) => (
+                        <div>
+                            <Input
+                                list
+                                key={index}
+                                type="text"
+                                placeholder="Option"
+                                value={option}
+                                onChange={ev => handleOptionChange(ev.target.value, index)}
+                            />
+                        </div>
+                    ))}
+                    <StyledLink onClick={addOption}>Add another</StyledLink>
+                </Box>
+                <Box>
+                    <h3>Bet Specifications</h3>
+                    <p>Define a value for your bet, add a person which you all trust and set an expiry date.</p>
+                    <Input
+                        type="number"
+                        number
+                        placeholder="Amount"
+                        value={amount}
+                        onChange={ev => setAmount(ev.target.value)}
+                    />
+                    <Input
+                        type="number"
+                        user
+                        placeholder="Trustee"
+                        value={trustee}
+                        onChange={ev => setTrustee(ev.target.value)}
+                    />
+                    <Input
+                        type="date"
+                        calendar
+                        placeholder="Expiry date"
+                        value={expiry}
+                        onChange={ev => setExpiry(ev.target.value)}
+                    />
+                </Box>
+                <Button blue onClick={createBet}>Save</Button>
             </div>
         </main>
     );

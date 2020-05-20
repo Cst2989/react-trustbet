@@ -1,63 +1,22 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 .App-body {
-  background-color: #fff;
-  min-height: 40vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #282c34;
+  background: #EAEAEA;
+  padding-bottom: 32px;
 }
-.createBet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 500px;
-
-}
-.createBet input {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: 30px;
+.betHeader {
   width: 100%;
-  border-radius: 5px;
-  padding:5px;
-}
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  height: 168px;
+  background: #5634D1;
+  margin-top: -82px;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: bold;
+  font-family: 'Poppins';
+  padding-top: 90px;
+  color: #fff;
+  text-align: left;
+  padding-left: 32px;
+  margin-bottom: -100px;
 }

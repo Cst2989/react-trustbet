@@ -1,0 +1,23 @@
+.popup {
+    width: 343px;
+    border-radius: 16px;
+    background: #fff;
+    margin: auto;
+    margin-top: 40px;
+    padding-top: 80px;
+    z-index: 3;
+    position: relative;
+    padding-bottom: 32px;
+    h2 {
+        color: #5634D1;
+        font-size: 36px;
+        line-height: 44px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    p {
+        color: #5634D1;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

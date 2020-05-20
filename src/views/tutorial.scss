@@ -1,0 +1,55 @@
+.steps {
+    position: relative;
+    display: flex;
+    width: 64px;
+    margin: 30px auto;
+    z-index: 2;
+    justify-content: space-between;
+    
+    .step_buble {
+        width: 16px;
+        height: 16px;
+        background: #F2F2F2;
+        border-radius: 50%;
+        &.active {
+            background: #FEBE01;
+        }
+    }
+}
+.buttons {
+    position: relative;;
+    display: flex;
+    z-index: 2;
+    justify-content: space-around;
+}
+.step {
+    display: none;
+    overflow: hidden;
+    &.active {
+        display: block;
+        overflow: visible;
+        z-index: 1;
+    }
+}
+.msg {
+    position: relative;
+    display: block;
+    padding: 24px;
+    padding-left: 100px;
+    border-radius: 16px;
+    left: -80px;
+    background: #fff;
+    text-align: left;
+    color: #0A0770;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 32px;
+    &.msg--right {
+        background: #FEBE01;
+        color: #fff;
+        left: auto;
+        right: -70px;
+        padding-left: 24px;
+        padding-right: 90px;
+    }
+}
